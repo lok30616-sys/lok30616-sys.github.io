@@ -117,9 +117,9 @@ button:focus-visible {
 }
 
 .wordmark-name {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9375rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .wordmark-role {
@@ -143,10 +143,29 @@ button:focus-visible {
   text-decoration: none;
   color: var(--muted);
   letter-spacing: 0.01em;
+  position: relative;
+  transition: color 0.2s var(--ease);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease);
 }
 
 .nav a:hover {
   color: var(--ink);
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .lang-toggle {
@@ -211,15 +230,15 @@ button:focus-visible {
 
 .display-name {
   font-size: clamp(2.75rem, 8vw, 5.25rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 0.95;
 }
 
 .display-title {
   font-size: clamp(1.35rem, 3.2vw, 2rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--muted);
   line-height: 1.2;
 }
@@ -249,7 +268,16 @@ button:focus-visible {
   letter-spacing: 0.02em;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: background 0.15s var(--ease), color 0.15s var(--ease), border-color 0.15s var(--ease);
+  transition:
+    background 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -326,8 +354,8 @@ button:focus-visible {
 .section-label h2 {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   line-height: 1.15;
 }
 
@@ -355,11 +383,63 @@ button:focus-visible {
   margin-bottom: 0;
 }
 
+.about-motto {
+  margin: 1.5rem 0 0;
+  padding: 0.95rem 0 0.95rem 1.15rem;
+  max-width: 40rem;
+  border-left: 2px solid var(--accent);
+  background: transparent;
+}
+
+.about-motto-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.rotor-mark {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: 0.1rem;
+  color: var(--accent);
+}
+
+.about-motto-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.about-motto-text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.about-motto-attrib {
+  margin: 0.45rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 /* ——— Projects ——— */
 
 .project-card {
   padding: 1.75rem 0;
   border-top: 1px solid var(--line);
+  transition: background 0.25s var(--ease), padding-left 0.25s var(--ease);
+}
+
+.project-card:hover {
+  padding-left: 0.35rem;
+}
+
+.project-card:hover .project-title {
+  color: var(--ink-soft);
 }
 
 .project-card:first-of-type {
@@ -383,8 +463,8 @@ button:focus-visible {
 .project-title {
   margin: 0;
   font-size: clamp(1.25rem, 2.4vw, 1.55rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .project-meta {
@@ -425,6 +505,12 @@ button:focus-visible {
   gap: 1.25rem 1.75rem;
   padding: 1.5rem 0;
   border-top: 1px solid var(--line);
+  transition: background 0.25s var(--ease);
+}
+
+.timeline-item:hover .timeline-what h3,
+.edu-item:hover .edu-what h3 {
+  color: var(--ink-soft);
 }
 
 .timeline-item:first-child,
@@ -455,8 +541,8 @@ button:focus-visible {
 .edu-what h3 {
   margin: 0;
   font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .timeline-role {
@@ -490,6 +576,16 @@ button:focus-visible {
   background: var(--white);
   border: 1px solid var(--line);
   border-top: 3px solid var(--ink);
+  transition:
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.skill-group:hover {
+  border-color: #d0d0d0;
+  box-shadow: 0 6px 20px rgba(10, 10, 10, 0.04);
+  transform: translateY(-2px);
 }
 
 .skill-group:nth-child(2) {
@@ -499,8 +595,8 @@ button:focus-visible {
 .skill-group h3 {
   margin: 0 0 0.85rem;
   font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -655,6 +751,25 @@ button:focus-visible {
   }
 }
 
+/* ——— Reveal on scroll ——— */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s var(--ease),
+    transform 0.55s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.06s; }
+.reveal-delay-2 { transition-delay: 0.12s; }
+.reveal-delay-3 { transition-delay: 0.18s; }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -664,5 +779,24 @@ button:focus-visible {
   *::before,
   *::after {
     transition: none !important;
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn:hover,
+  .skill-group:hover {
+    transform: none;
+  }
+
+  .project-card:hover {
+    padding-left: 0;
+  }
+
+  .nav a::after {
+    transition: none;
   }
 }
