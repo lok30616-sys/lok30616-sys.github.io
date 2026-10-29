@@ -16,7 +16,7 @@
       heroEyebrow: "Hong Kong",
       heroTitle: "Analytics Engineer",
       heroLede:
-        "Platform migration, data integration, and measurement — built for scale and clarity.",
+        "Platform migration, data integration, and measurement — calm outside, stubborn about craft.",
       ctaProjects: "View projects",
       ctaContact: "Get in touch",
       metaLocation: "Location",
@@ -27,9 +27,13 @@
       metaFocusValue: "Migration · ETL · Analytics · AI tools",
       aboutTitle: "About",
       aboutP1:
-        "I am an Analytics Engineer based in Hong Kong. I lead platform migrations and data integration work — Zendesk, Intercom, HubSpot, AWS Glue — with a focus on reliable cutovers, clean CRM models, and measurement that teams can trust. I also work with modern AI-assisted tooling such as Cursor and Kiro to speed up delivery without sacrificing rigor.",
+        "I'm an Analytics Engineer in Hong Kong. I work on platform migrations and data integration — Zendesk, Intercom, HubSpot, AWS Glue — chasing reliable cutovers, CRM models that stay clean, and measurement teams can actually trust. Cursor and Kiro help me move faster without cutting corners.",
       aboutP2:
-        "My day-to-day spans distributed ETL, web analytics, and operational data for customer platforms. I care about clear schemas, reproducible pipelines, and handing teams systems they can own.",
+        "Day to day I'm in ETL, web analytics, and ops data for customer platforms. I like clear schemas, pipelines you can rerun, and leaving people with systems they can own.",
+      aboutMotto:
+        "If something is worth doing, I stick with it — keep turning, keep improving.",
+      aboutAttrib:
+        "Inspired by Mazda’s rotary / Never Stop Challenging spirit.",
       projectsTitle: "Featured projects",
       projectsIntro:
         "Selected personal project experience. Client names are masked for confidentiality.",
@@ -104,7 +108,7 @@
       navContact: "聯絡",
       heroEyebrow: "香港",
       heroTitle: "分析工程師",
-      heroLede: "平台遷移、數據整合與成效衡量——以可擴展與清晰為本。",
+      heroLede: "平台遷移、數據整合與成效衡量——外表從容，骨子裡對做好一件事很執著。",
       ctaProjects: "查看專案",
       ctaContact: "聯絡我",
       metaLocation: "地點",
@@ -115,9 +119,13 @@
       metaFocusValue: "遷移 · ETL · 分析 · AI 工具",
       aboutTitle: "關於",
       aboutP1:
-        "我是駐香港的分析工程師。負責平台遷移與數據整合（Zendesk、Intercom、HubSpot、AWS Glue），著重可靠切換、清晰的 CRM 模型，以及團隊可信任的衡量體系。我也使用 Cursor、Kiro 等 AI 輔助工具加速交付，同時維持嚴謹度。",
+        "我是駐香港的分析工程師。日常做平台遷移與數據整合——Zendesk、Intercom、HubSpot、AWS Glue——追求可靠切換、保持乾淨的 CRM 模型，以及團隊真正用得上的衡量。Cursor、Kiro 這類 AI 工具幫我走快一點，但不走捷徑。",
       aboutP2:
-        "日常工作涵蓋分散式 ETL、網站分析，以及客戶平台的營運數據。我重視清楚的資料結構、可重現的管線，以及把系統交到團隊手上後他們仍能自主維運。",
+        "平常就泡在 ETL、網站分析，還有客戶平台的營運數據裡。喜歡清楚的資料結構、可以重跑的管線，以及把系統交出去之後，大家還能自己維運。",
+      aboutMotto:
+        "只要事情值得做，我就會堅持下去——持續轉動，持續變好。",
+      aboutAttrib:
+        "靈感來自 Mazda 轉子引擎與 Never Stop Challenging 精神。",
       projectsTitle: "精選專案",
       projectsIntro: "精選個人專案經驗。客戶名稱已遮罩以保密。",
       proj1Tag: "數據工程 · 遷移",
@@ -219,4 +227,55 @@
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   setLang(getPreferredLang());
+
+  /* Subtle section / card reveal — skipped when user prefers reduced motion */
+  function initReveal() {
+    var reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var targets = document.querySelectorAll(
+      ".hero-copy, .hero-meta, .section-label, .section-intro, .prose, .about-motto, .project-card, .timeline-item, .edu-item, .skill-group, .contact-list"
+    );
+    if (!targets.length) return;
+
+    if (reduce || !("IntersectionObserver" in window)) {
+      targets.forEach(function (el) {
+        el.classList.add("reveal", "is-visible");
+      });
+      return;
+    }
+
+    function inView(el) {
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.top < vh * 0.92 && r.bottom > 0;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+    );
+
+    targets.forEach(function (el, i) {
+      var delay = i % 3;
+      if (delay > 0) el.classList.add("reveal-delay-" + delay);
+      if (inView(el)) {
+        // Already on screen — show immediately, no hide flash
+        el.classList.add("reveal", "is-visible");
+      } else {
+        el.classList.add("reveal");
+        observer.observe(el);
+      }
+    });
+  }
+
+  initReveal();
+
 })();
