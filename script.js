@@ -24,10 +24,10 @@
       metaRole: "Role",
       metaRoleValue: "Analytics Engineer",
       metaFocus: "Focus",
-      metaFocusValue: "Migration · ETL · Analytics",
+      metaFocusValue: "Migration · ETL · Analytics · AI tools",
       aboutTitle: "About",
       aboutP1:
-        "I am an Analytics Engineer based in Hong Kong. I lead platform migrations and data integration work — Zendesk, Intercom, HubSpot, AWS Glue — with a focus on reliable cutovers, clean CRM models, and measurement that teams can trust.",
+        "I am an Analytics Engineer based in Hong Kong. I lead platform migrations and data integration work — Zendesk, Intercom, HubSpot, AWS Glue — with a focus on reliable cutovers, clean CRM models, and measurement that teams can trust. I also work with modern AI-assisted tooling such as Cursor and Kiro to speed up delivery without sacrificing rigor.",
       aboutP2:
         "My day-to-day spans distributed ETL, web analytics, and operational data for customer platforms. I care about clear schemas, reproducible pipelines, and handing teams systems they can own.",
       projectsTitle: "Featured projects",
@@ -88,7 +88,7 @@
         "Open to conversations about analytics engineering, platform migrations, and measurement. Typically available with about one month’s notice.",
       contactEmail: "Email",
       contactLinkedIn: "LinkedIn",
-      contactLinkedInValue: "Sing Lo — link placeholder",
+      contactLinkedInValue: "Sing Lo",
       contactCV: "CV",
       contactCVValue: "Request a PDF by email",
       footerNote: "Personal portfolio · static site",
@@ -112,10 +112,10 @@
       metaRole: "職位",
       metaRoleValue: "分析工程師",
       metaFocus: "專長",
-      metaFocusValue: "遷移 · ETL · 分析",
+      metaFocusValue: "遷移 · ETL · 分析 · AI 工具",
       aboutTitle: "關於",
       aboutP1:
-        "我是駐香港的分析工程師。負責平台遷移與數據整合（Zendesk、Intercom、HubSpot、AWS Glue），著重可靠切換、清晰的 CRM 模型，以及團隊可信任的衡量體系。",
+        "我是駐香港的分析工程師。負責平台遷移與數據整合（Zendesk、Intercom、HubSpot、AWS Glue），著重可靠切換、清晰的 CRM 模型，以及團隊可信任的衡量體系。我也使用 Cursor、Kiro 等 AI 輔助工具加速交付，同時維持嚴謹度。",
       aboutP2:
         "日常工作涵蓋分散式 ETL、網站分析，以及客戶平台的營運數據。我重視清楚的資料結構、可重現的管線，以及把系統交到團隊手上後他們仍能自主維運。",
       projectsTitle: "精選專案",
@@ -167,7 +167,7 @@
         "歡迎就分析工程、平台遷移與成效衡量交流。通常約需一個月通知期。",
       contactEmail: "電郵",
       contactLinkedIn: "LinkedIn",
-      contactLinkedInValue: "Sing Lo — 連結待補",
+      contactLinkedInValue: "Sing Lo",
       contactCV: "履歷",
       contactCVValue: "以電郵索取 PDF",
       footerNote: "個人作品集 · 靜態網站",
