@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lo Kai Sing — Analytics Engineer based in Hong Kong. Data migration, analytics, and CRM platforms." />
+  <meta name="author" content="Lo Kai Sing" />
+  <title>Lo Kai Sing · Analytics Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="Lo Kai Sing — home">
+        <span class="wordmark-name">Lo Kai Sing</span>
+        <span class="wordmark-role" data-i18n="wordmarkRole">Analytics Engineer</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#skills" data-i18n="navSkills">Skills</a>
+        <a href="#education" data-i18n="navEducation">Education</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" class="lang-btn is-active" aria-pressed="true" data-lang="en">EN</button>
+          <button type="button" id="lang-zh" class="lang-btn" aria-pressed="false" data-lang="zh">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">Hong Kong</p>
+          <h1 class="display">
+            <span class="display-name">Lo Kai Sing</span>
+            <span class="display-title" data-i18n="heroTitle">Analytics Engineer</span>
+          </h1>
+          <p class="lede" data-i18n="heroLede">Platform migration, data integration, and measurement — built for scale and clarity.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">View projects</a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="ctaContact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-meta" aria-label="Quick facts">
+          <dl class="meta-list">
+            <div>
+              <dt data-i18n="metaLocation">Location</dt>
+              <dd data-i18n="metaLocationValue">Hong Kong</dd>
+            </div>
+            <div>
+              <dt data-i18n="metaRole">Role</dt>
+              <dd data-i18n="metaRoleValue">Analytics Engineer</dd>
+            </div>
+            <div>
+              <dt data-i18n="metaFocus">Focus</dt>
+              <dd data-i18n="metaFocusValue">Migration · ETL · Analytics</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+      <div class="hero-rule" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="aboutTitle">About</h2>
+          <p class="section-index">01</p>
+        </div>
+        <div class="section-body">
+          <p class="prose" data-i18n="aboutP1">I am an Analytics Engineer based in Hong Kong. I lead platform migrations and data integration work — Zendesk, Intercom, HubSpot, AWS Glue — with a focus on reliable cutovers, clean CRM models, and measurement that teams can trust.</p>
+          <p class="prose" data-i18n="aboutP2">My day-to-day spans distributed ETL, web analytics, and operational data for customer platforms. I care about clear schemas, reproducible pipelines, and handing teams systems they can own.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="projectsTitle">Featured projects</h2>
+          <p class="section-index">02</p>
+        </div>
+        <div class="section-body">
+          <p class="section-intro" data-i18n="projectsIntro">Selected personal project experience. Client names are masked for confidentiality.</p>
+
+          <article class="project-card">
+            <header class="project-header">
+              <p class="project-tag" data-i18n="proj1Tag">Data Engineer · Migration</p>
+              <h3 class="project-title" data-i18n="proj1Title">Consumer Electronics Brand</h3>
+              <p class="project-meta"><span data-i18n="proj1Meta">Zendesk → Intercom · 01/2026 – mid 2026</span></p>
+            </header>
+            <ul class="project-points">
+              <li data-i18n="proj1b1">Migrated support operations for ~100 CS staff: ~250K tickets; ~5.25M records archived to S3.</li>
+              <li data-i18n="proj1b2">Built a ~22-stage AWS Glue ETL pipeline; Intercom custom data attributes; Secrets Manager; cutover and reconciliation.</li>
+              <li data-i18n="proj1b3">Rationalized ~4,858 automation items; Parquet + Athena for archive analytics.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <header class="project-header">
+              <p class="project-tag" data-i18n="proj2Tag">Web Analytics &amp; Attribution</p>
+              <h3 class="project-title" data-i18n="proj2Title">Audio Brand</h3>
+              <p class="project-meta"><span data-i18n="proj2Meta">Multi-region ecommerce · GA4 + Shopify</span></p>
+            </header>
+            <ul class="project-points">
+              <li data-i18n="proj2b1">Multi-region GA4 with Shopify custom-pixel coverage across EU, Japan, and Korea.</li>
+              <li data-i18n="proj2b2">Standardized events and channel groupings; reconciled GA4 vs Shopify attribution.</li>
+              <li data-i18n="proj2b3">Delivered a GA4 audit toolkit for ongoing measurement hygiene.</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <header class="project-header">
+              <p class="project-tag" data-i18n="proj3Tag">Data Engineer · Migration</p>
+              <h3 class="project-title" data-i18n="proj3Title">Telecommunications Client</h3>
+              <p class="project-meta"><span data-i18n="proj3Meta">CRM → HubSpot · phased 2024 UAT</span></p>
+            </header>
+            <ul class="project-points">
+              <li data-i18n="proj3b1">Consolidated HubSpot, INsight, and Console Connect into a unified HubSpot CRM.</li>
+              <li data-i18n="proj3b2">Modeled parent–child company hierarchy; BigQuery cleansing and deduplication.</li>
+              <li data-i18n="proj3b3">Supported phased UAT through 2024 for a controlled rollout.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="experienceTitle">Experience</h2>
+          <p class="section-index">03</p>
+        </div>
+        <div class="section-body">
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-when">
+                <time datetime="2024-01">01/2024</time>
+                <span class="timeline-dash">–</span>
+                <span data-i18n="expCurrent">Present</span>
+              </div>
+              <div class="timeline-what">
+                <h3 data-i18n="exp1Role">Analytics Engineer</h3>
+                <p class="timeline-desc" data-i18n="exp1Desc">Senior IC / lead on platform migrations, AWS Glue ETL, CRM unification, and multi-region analytics. See featured projects above.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-when">
+                <time datetime="2022-07">07/2022</time>
+                <span class="timeline-dash">–</span>
+                <time datetime="2024-01">01/2024</time>
+              </div>
+              <div class="timeline-what">
+                <h3 data-i18n="exp2Role">Associate Analytics Engineer</h3>
+                <p class="timeline-desc" data-i18n="exp2Desc">Tracking plans; GA4, Amplitude, and Mixpanel implementations; BigQuery, dbt, Fivetran, and Hightouch for analytics and activation.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-when">
+                <time datetime="2022-03">03/2022</time>
+                <span class="timeline-dash">–</span>
+                <time datetime="2022-06">06/2022</time>
+              </div>
+              <div class="timeline-what">
+                <h3 data-i18n="exp3Role">Junior Data Engineer</h3>
+                <p class="timeline-desc" data-i18n="exp3Desc">Built foundational data-engineering skills through programme analytics and operational reporting.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-when">
+                <time datetime="2021-10">10/2021</time>
+                <span class="timeline-dash">–</span>
+                <time datetime="2022-03">03/2022</time>
+              </div>
+              <div class="timeline-what">
+                <h3 data-i18n="exp4Role">Programme operations</h3>
+                <p class="timeline-desc" data-i18n="exp4Desc">Early experience in programme operations and coordination — groundwork for later analytics work.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="skillsTitle">Skills</h2>
+          <p class="section-index">04</p>
+        </div>
+        <div class="section-body skills-grid">
+          <div class="skill-group">
+            <h3 data-i18n="skill1Title">Data Engineering &amp; Cloud</h3>
+            <ul>
+              <li>AWS (S3, Glue, Athena, Secrets Manager)</li>
+              <li>BigQuery</li>
+              <li>Parquet</li>
+              <li>dbt</li>
+              <li>Fivetran</li>
+              <li>Hightouch</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skill2Title">Analytics &amp; Tracking</h3>
+            <ul>
+              <li>GA4</li>
+              <li>GTM</li>
+              <li>Shopify</li>
+              <li>Amplitude</li>
+              <li>Mixpanel</li>
+              <li>Power BI</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skill3Title">Platforms</h3>
+            <ul>
+              <li>HubSpot</li>
+              <li>Intercom</li>
+              <li>Zendesk</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skill4Title">Languages &amp; Tools</h3>
+            <ul>
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Git</li>
+              <li>Notion</li>
+              <li>Asana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="educationTitle">Education</h2>
+          <p class="section-index">05</p>
+        </div>
+        <div class="section-body">
+          <ul class="edu-list">
+            <li class="edu-item">
+              <div class="edu-when">
+                <time datetime="2019-09">09/2019</time>
+                <span class="timeline-dash">–</span>
+                <time datetime="2021-11">11/2021</time>
+              </div>
+              <div class="edu-what">
+                <h3 data-i18n="edu1School">The Chinese University of Hong Kong</h3>
+                <p data-i18n="edu1Degree">BSocSc Psychology</p>
+              </div>
+            </li>
+            <li class="edu-item">
+              <div class="edu-when">
+                <time datetime="2017-09">09/2017</time>
+                <span class="timeline-dash">–</span>
+                <time datetime="2019-09">09/2019</time>
+              </div>
+              <div class="edu-what">
+                <h3 data-i18n="edu2School">HKCC</h3>
+                <p data-i18n="edu2Degree">Associate Degree in Applied Social Sciences (Psychology), with Distinction</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="contactTitle">Contact</h2>
+          <p class="section-index">06</p>
+        </div>
+        <div class="section-body">
+          <p class="prose contact-lede" data-i18n="contactLede">Open to conversations about analytics engineering, platform migrations, and measurement. Typically available with about one month’s notice.</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label" data-i18n="contactEmail">Email</span>
+              <a href="mailto:lokaising9@gmail.com">lokaising9@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label" data-i18n="contactLinkedIn">LinkedIn</span>
+              <a href="#linkedin" data-i18n="contactLinkedInValue">Sing Lo — link placeholder</a>
+            </li>
+            <li>
+              <span class="contact-label" data-i18n="contactCV">CV</span>
+              <a href="mailto:lokaising9@gmail.com?subject=CV%20request" data-i18n="contactCVValue">Request a PDF by email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Lo Kai Sing</p>
+      <p class="footer-note" data-i18n="footerNote">Personal portfolio · static site</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
