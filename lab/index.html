@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Small tools for tracking and migrations: a UTM builder, a Unix time converter, and a field rename mapper. Nothing leaves the browser." />
+  <meta name="author" content="Lo Kai Sing" />
+  <title>Lab · Lo Kai Sing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="Lo Kai Sing — home">
+        <span class="wordmark-name">Lo Kai Sing</span>
+        <span class="wordmark-role" data-i18n="wordmarkRole">Analytics Engineer</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#about" data-i18n="navAbout">About</a>
+        <a href="/#projects" data-i18n="navProjects">Projects</a>
+        <a href="/#experience" data-i18n="navExperience">Experience</a>
+        <a href="/#skills" data-i18n="navSkills">Skills</a>
+        <a href="/#education" data-i18n="navEducation">Education</a>
+        <a href="/#contact" data-i18n="navContact">Contact</a>
+        <a href="/story/" data-i18n="navStory">Story</a>
+        <a href="/lab/" data-i18n="navLab" aria-current="page">Lab</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" class="lang-btn is-active" aria-pressed="true" data-lang="en">EN</button>
+          <button type="button" id="lang-zh" class="lang-btn" aria-pressed="false" data-lang="zh">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="labEyebrow">Lab</p>
+        <h1 class="page-title" data-i18n="labTitle">Three small tools</h1>
+        <p class="lede" data-i18n="labLede">UTM links, Unix time, and a field rename for the step between an export and the warehouse. Everything stays in this browser.</p>
+        <p class="page-jumps">
+          <a href="#utm" data-i18n="utmTitle">UTM builder</a>
+          <a href="#unix" data-i18n="unixTitle">Unix time</a>
+          <a href="#fields" data-i18n="mapTitle">Field mapper</a>
+        </p>
+      </div>
+      <div class="hero-rule" aria-hidden="true"></div>
+    </section>
+
+    <section id="utm" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="utmTitle">UTM builder</h2>
+          <p class="section-index">01</p>
+        </div>
+        <form class="tool" id="utm-form" autocomplete="off">
+          <p class="section-intro" data-i18n="utmIntro">Build a link with the campaign parameters filled in. Existing query parameters on the URL are kept.</p>
+          <div class="tool-grid">
+            <label class="field field-wide">
+              <span data-i18n="utmUrl">Page URL</span>
+              <input name="url" type="text" inputmode="url" spellcheck="false" data-i18n-placeholder="utmUrlPh" placeholder="https://example.com/pricing" />
+            </label>
+            <label class="field">
+              <span data-i18n="utmSource">Source</span>
+              <input name="source" type="text" spellcheck="false" data-i18n-placeholder="utmSourcePh" placeholder="newsletter" />
+            </label>
+            <label class="field">
+              <span data-i18n="utmMedium">Medium</span>
+              <input name="medium" type="text" spellcheck="false" data-i18n-placeholder="utmMediumPh" placeholder="email" />
+            </label>
+            <label class="field">
+              <span data-i18n="utmCampaign">Campaign</span>
+              <input name="campaign" type="text" spellcheck="false" data-i18n-placeholder="utmCampaignPh" placeholder="spring_launch" />
+            </label>
+            <label class="field">
+              <span data-i18n="utmContent">Content</span>
+              <input name="content" type="text" spellcheck="false" data-i18n-placeholder="utmContentPh" placeholder="logo" />
+            </label>
+            <label class="field">
+              <span data-i18n="utmTerm">Term</span>
+              <input name="term" type="text" spellcheck="false" data-i18n-placeholder="utmTermPh" placeholder="analytics" />
+            </label>
+          </div>
+          <p class="tool-error" id="utm-error" role="alert"></p>
+          <div class="tool-result" id="utm-result" hidden>
+            <div class="tool-result-bar">
+              <span data-i18n="utmResult">Link</span>
+              <button type="button" class="btn btn-ghost btn-small" id="utm-copy" data-i18n="copy">Copy</button>
+            </div>
+            <a class="tool-link" id="utm-link" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="unix" class="section section-alt">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="unixTitle">Unix time</h2>
+          <p class="section-index">02</p>
+        </div>
+        <form class="tool" id="unix-form" autocomplete="off">
+          <p class="section-intro" data-i18n="unixIntro">Paste a timestamp or a date. Ten digits is seconds, thirteen is milliseconds. A date with no offset uses this browser’s timezone. Add +08:00 for Hong Kong.</p>
+          <div class="tool-grid">
+            <label class="field field-wide">
+              <span data-i18n="unixInput">Timestamp or date</span>
+              <input id="unix-in" name="instant" type="text" spellcheck="false" data-i18n-placeholder="unixPh" placeholder="1700000000 or 2024-11-10T20:25:00+08:00" />
+            </label>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn btn-ghost" id="unix-now" data-i18n="unixNow">Now</button>
+            <button type="button" class="btn btn-ghost" id="unix-copy" data-i18n="copy" disabled>Copy</button>
+          </div>
+          <p class="tool-error" id="unix-error" role="alert"></p>
+          <dl class="tool-readout" id="unix-out" hidden>
+            <div>
+              <dt data-i18n="unixSeconds">Seconds</dt>
+              <dd id="unix-sec"></dd>
+            </div>
+            <div>
+              <dt data-i18n="unixMillis">Milliseconds</dt>
+              <dd id="unix-ms"></dd>
+            </div>
+            <div>
+              <dt data-i18n="unixUtc">UTC</dt>
+              <dd id="unix-utc"></dd>
+            </div>
+            <div>
+              <dt data-i18n="unixHk">Hong Kong</dt>
+              <dd id="unix-hk"></dd>
+            </div>
+          </dl>
+        </form>
+      </div>
+    </section>
+
+    <section id="fields" class="section">
+      <div class="wrap section-grid">
+        <div class="section-label">
+          <h2 data-i18n="mapTitle">Field mapper</h2>
+          <p class="section-index">03</p>
+        </div>
+        <form class="tool" id="map-form" autocomplete="off">
+          <p class="section-intro" data-i18n="mapIntro">One field per line, or a single comma-separated row. A blank target is snake-cased from the source. Names that need quoting use BigQuery backticks.</p>
+          <div class="tool-grid">
+            <label class="field">
+              <span data-i18n="mapSource">Source fields</span>
+              <textarea id="map-src" name="source" spellcheck="false" data-i18n-placeholder="mapSourcePh" placeholder="Ticket Id&#10;created_at&#10;Channel Group"></textarea>
+            </label>
+            <label class="field">
+              <span data-i18n="mapTarget">Target fields</span>
+              <textarea id="map-dst" name="target" spellcheck="false" data-i18n-placeholder="mapTargetPh" placeholder="ticket_id"></textarea>
+            </label>
+          </div>
+          <p class="tool-note" id="map-note"></p>
+          <div class="tool-result" id="map-sql-wrap" hidden>
+            <div class="tool-result-bar">
+              <span data-i18n="mapSql">SQL</span>
+              <button type="button" class="btn btn-ghost btn-small" id="map-copy-sql" data-i18n="copy">Copy</button>
+            </div>
+            <pre class="tool-out" id="map-sql"></pre>
+          </div>
+          <div class="tool-result" id="map-json-wrap" hidden>
+            <div class="tool-result-bar">
+              <span data-i18n="mapJson">JSON</span>
+              <button type="button" class="btn btn-ghost btn-small" id="map-copy-json" data-i18n="copy">Copy</button>
+            </div>
+            <pre class="tool-out" id="map-json"></pre>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Lo Kai Sing</p>
+      <p class="footer-links">
+        <a href="/" data-i18n="navHome">Home</a>
+        <a href="/story/" data-i18n="navStory">Story</a>
+        <a href="/lab/" data-i18n="navLab" aria-current="page">Lab</a>
+      </p>
+      <p class="footer-note" data-i18n="footerNote">Personal portfolio · static site</p>
+    </div>
+  </footer>
+
+  <script src="/lab-tools.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -18,12 +18,15 @@ python3 -m http.server 8080
 
 Files:
 
-| File         | Role                          |
-|--------------|-------------------------------|
-| `index.html` | Structure & content shell     |
-| `styles.css` | Swiss layout & responsive UI  |
-| `script.js`  | EN/ZH toggle + `localStorage` |
-| `README.md`  | This file                     |
+| File              | Role                                      |
+|-------------------|-------------------------------------------|
+| `index.html`      | Home page                                 |
+| `story/index.html`| Personal story                            |
+| `lab/index.html`  | UTM builder, Unix time, field mapper      |
+| `lab-tools.js`    | Tool logic. Runs in the browser only.     |
+| `styles.css`      | Swiss layout & responsive UI              |
+| `script.js`       | EN/ZH toggle + `localStorage`             |
+| `README.md`       | This file                                 |
 
 ## Deploy to GitHub Pages
 
